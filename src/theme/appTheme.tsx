@@ -4,7 +4,10 @@
 import {StyleSheet} from 'react-native';
 
 export const colores = {
-  primary: '#5856D6',
+  primary: '#340068',
+  secondary:'#FF6978',
+  tertiary:'#B1EDE8',
+  textWhite:'#fffcf9',
 };
 
 export const appTheme = StyleSheet.create({
@@ -52,8 +55,18 @@ export const appTheme = StyleSheet.create({
     marginRight: 10,
     marginVertical: 20,
   },
+  botonSignIn:{
+    alignSelf:'center',
+    width: 100,
+    height: 50,
+    borderRadius: 20,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginRight: 10,
+    marginVertical: 20,
+  },
   textoBotonGrande: {
-    color: '#D7E8BA',
+    color: colores.textWhite,
     fontWeight: 'bold',
     fontSize: 20,
   },

@@ -1,10 +1,11 @@
 import {StackScreenProps} from '@react-navigation/stack';
-import React, {useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import {Text, View} from 'react-native';
 
 import {RootStackParams} from '../navigator/StackNavigator';
 import {appTheme} from '../theme/appTheme';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { AuthContext } from '../context/AuthContext';
 
 /**
  * Agregar los tipos <RootStackParams, 'PersonaScreen'> asegura que trabajemos
@@ -27,11 +28,16 @@ export const PersonaScreen = ({navigation, route}: Props) => {
   //   const params = route.params as RouterParams;
 
   const params = route.params;
+  const {changeUserName} = useContext(AuthContext);
 
   useEffect(() => {
     navigation.setOptions({
       title: params.nombre,
     });
+  }, []);
+
+  useEffect(() => {
+    changeUserName(params.nombre);
   }, []);
 
   return (
